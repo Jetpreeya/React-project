@@ -1,2 +1,2 @@
 # React-project
-E-commerce
+<h2> My E-commerce project <h2>
