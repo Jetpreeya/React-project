@@ -11,5 +11,11 @@
   <li>react-router-dom </li>
   <li>react-hook-form </li>
   </ul>
+  <h3> npm i bootstrap </h3>
+  <h3> npm i font-awesome</h3> 
+  <h3> npm i react-redux </h3> 
+  <h3> npm i redux react-redux </h3> 
+  <h3> npm i react-router-dom </h3> 
 </div>
+
 
