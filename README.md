@@ -1,6 +1,6 @@
 # React-project
 <h2> My E-commerce project :shopping_cart:</h2>
-<p>I got inspiration from Ica Maxi</p>
+<p>This project , I got inspiration from Ica Maxi. </p>
 <div>
 <ul> 
   <li><h3> npm i bootstrap </h3></li>
