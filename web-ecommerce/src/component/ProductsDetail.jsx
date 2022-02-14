@@ -22,7 +22,7 @@ const ProductsDetail = () =>{
                 <div className="col-md-6 d-flex flex-column justify-content-center">
                     <h1 className="display-5 fw-bold">{product.title}</h1>
                     <hr/>
-                    <h2 className="my-4">{product.price}Kr</h2>
+                    <h2 className="my-4">{product.price}{" "} Kr</h2>
                     <p className = "lead">{product.desc}</p>
                     <button onClick={() =>handleCart(product)}className="btn btn-outline-primary my-5">Add to cart</button>
                 </div>

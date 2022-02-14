@@ -5,10 +5,10 @@ const Product = () =>{
     const cardItem = (item) =>{
         return(
             <div class="card mb-4" style={{width: "16rem"}}>
-  <img src={item.img} class="card-img-top" alt={item.title}/>
+  <img src={item.img} class= "card-img-top" alt={item.title}/>
   <div class="card-body text-center">
     <h5 class="card-title">{item.title}</h5>
-    <p className="lead">{item.price}Kr</p>
+    <p className="lead">{item.price} {" "} Kr</p>
     <a href="#" class="btn btn-outline-primary">ADD</a>
   </div>
 </div>
