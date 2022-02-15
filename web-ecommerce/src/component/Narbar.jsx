@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import './Home.css';
 
 const Navbar = () => {
     return (
@@ -9,13 +10,9 @@ const Navbar = () => {
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/Products"><i class='fa fa-tag fa-2x'></i>
+          <div className="collapse navbar-collapse ms-1" >
+              <a class="nav-link active " aria-current="page" href="/Products"><i class='fa fa-tag fa-2x'></i>
                     Product</a>
-              </li>
-            </ul>
             </div>
             
             <div className="buttons">
