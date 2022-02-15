@@ -23,7 +23,7 @@ const ProductsDetail = () =>{
                     <hr/>
                     <h2 className="my-4">{product.price}{" "} Kr</h2>
                     <p className = "lead">{product.desc}</p>
-                    <button onClick={() =>handleCart(product)} className="btn btn-outline-primary my-5">Add to cart</button>
+                    <button onClick={handleCart(product)} className="btn btn-outline-primary my-5">Add to cart</button>
                 </div>
             </div>
         </div>

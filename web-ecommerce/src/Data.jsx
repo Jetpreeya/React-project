@@ -36,7 +36,7 @@ const DATA = [
     img : "/asset/banana.jpg"
 },
 {id:6,
-    title: "Tomato about 110g",
+    title: "Tomato 110g",
     price : "37.50",
     desc :"An all-round working tomato that can vary a little in taste depending on the variety. Suitable for salads, seafood dishes or as a sandwich spread with cheese.",
     img : "/asset/tomato.jpg"
