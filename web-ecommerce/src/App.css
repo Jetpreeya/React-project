@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #051b47;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar-light .navbar-nav .nav-link .nav-active{
+  color: rgb(19, 13, 13);
 }
