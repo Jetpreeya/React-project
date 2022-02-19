@@ -1,5 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Login from "./buttons/login";
+import Register from "./buttons/register";
+import CartBtn from "./buttons/cartBtn";
 import './Home.css';
 
 const Navbar = () => {
@@ -14,15 +16,9 @@ const Navbar = () => {
               <a class="nav-link active " aria-current="page" href="/Products"><i class='fa fa-tag fa-2x'></i>
                     Product</a>
             </div>
-            
-            <div className="buttons">
-                <NavLink to ="/register" className="btn btn-outline-dark ms-2">
-                    <i className="fa fa-user me-1 fa-2x"></i> Register</NavLink>
-                <NavLink to ="/login" className="btn btn-outline-dark ms-2">
-                    <i className="fa fa-sign-in me-1 fa-2x"></i> Login</NavLink>
-                <NavLink to ="/cart" className="btn btn-outline-dark ms-2">
-                <i class='fa fa-shopping-cart fa-2x'></i>Cart(0)</NavLink>
-          </div>
+            <Register/>
+            <Login/>
+            <CartBtn/>
         </div>
       </nav>
     );

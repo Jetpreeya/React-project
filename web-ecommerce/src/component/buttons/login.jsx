@@ -3,7 +3,7 @@ import React from 'react';
 const Login = () => {
     return (
         <>
-            <button type="button" className="btn btn-outline-dark ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" className="btn btn-outline-success ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <i className="fa fa-sign-in me-1 fa-2x"></i> Login
             </button>
 
@@ -28,7 +28,16 @@ const Login = () => {
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
                                         <label class="form-check-label" for="exampleCheck1">Remember me</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                <button type="submit" class="btn btn-primary w-100 ">Login</button>
+
+                                <div className= "modal-body">
+                            <button className="btn btn-outline-info w-100 mb-4">
+                                <span className="fa fa-google me-2"></span> Log In With Google 
+                            </button>
+                            <button className="btn btn-outline-info w-100 mb-2">
+                                <span className="fa fa-facebook me-2"></span> Log In With Facebook 
+                            </button>
+                            </div>
                             </form>
                         </div>
                     </div>

@@ -6,7 +6,6 @@ import ProductsDetail from './component/ProductsDetail';
 import Footer from './component/Footer';
 import { Routes, Route} from "react-router-dom";
 
-
 function App() {
   return (
     <>
