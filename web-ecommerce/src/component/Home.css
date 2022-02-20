@@ -5,3 +5,15 @@
 /* .container-fluid {
     background-color: rgb(241, 233, 239);
 } */
+
+.card-title{
+    color: black;
+}
+
+.nav-link{
+    text-decoration: inherit;
+}
+
+.card-body{
+    text-align: center;
+}
