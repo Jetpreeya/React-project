@@ -1,8 +1,7 @@
 import React, { useState, useContext, useReducer, useEffect } from 'react'
 import DATA from '../Data'
 import reducer from './reducer'
-// ATTENTION!!!!!!!!!!
-// I SWITCHED TO PERMANENT DOMAIN
+
 const AppContext = React.createContext()
 
 const initialState = {
@@ -28,9 +27,6 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'DECREASE', payload: id })
   }
   
-  const toggleAmount = (id, type) => {
-    dispatch({ type: 'TOGGLE_AMOUNT', payload: { id, type } })
-  }
 
   useEffect(() => {
     dispatch({ type: 'GET_TOTALS' })
@@ -43,14 +39,13 @@ const AppProvider = ({ children }) => {
         remove,
         increase,
         decrease,
-        toggleAmount,
       }}
     >
       {children}
     </AppContext.Provider>
   )
 }
-// make sure use
+
 export const useGlobalContext = () => {
   return useContext(AppContext)
 }
