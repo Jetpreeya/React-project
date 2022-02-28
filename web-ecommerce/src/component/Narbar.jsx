@@ -1,9 +1,9 @@
 import React from "react";
 import Login from "./buttons/login";
 import Register from "./buttons/register";
-// import CartBtn from "./buttons/cartBtn";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+/*I use Link to connect cart with route cart */
 
 const Navbar = ({ setShow, size }) => {
     return (
@@ -17,7 +17,6 @@ const Navbar = ({ setShow, size }) => {
               <a class="nav-link active " aria-current="page" href="/Products"><i class='fa fa-tag fa-2x'></i>
                     Product</a>
             </div>
-            {/* <CartBtn/> */}
             <Register/>
             <Login/>
             <div className="cart nav-link" onClick={() => (setShow(false))}>
@@ -29,3 +28,4 @@ const Navbar = ({ setShow, size }) => {
     );
 }
 export default Navbar;
+
