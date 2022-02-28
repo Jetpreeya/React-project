@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./cart.css";
-import {NavLink} from 'react-router-dom'
+import "./styles/cart.css";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart, setCart, handleChange }) => {
   const [price, setPrice] = useState(0);
   
-
   const handleRemove = (id) => {
     const arr = cart.filter((item) => item.id !== id);
     setCart(arr);
@@ -49,10 +48,10 @@ const Cart = ({ cart, setCart, handleChange }) => {
         <span>Total Price of your Cart</span>
         <span>{price} Kr</span>
       </div>
+      </article>
       <div className="checkout">
-      <NavLink to="/checkout" className= "btn btn-success ms-2">Process to Checkout</NavLink>
+      <Link to="/checkout" className= "btn btn-success ms-2"> Process to Checkout</Link>
       </div>
-    </article>
     </>
   );
 };

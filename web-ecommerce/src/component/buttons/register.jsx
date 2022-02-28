@@ -17,19 +17,19 @@ const Register = () => {
                         <div className="modal-body">
                             <form>
                             <div className="mb-3">
-                                    <label for="NewInputName" className="form-label">First Name</label>
+                                    <label htmlfor="NewInputName" className="form-label">First Name</label>
                                     <input type="text" className="form-control" id="NewInputName"/>
                                 </div>
                                 <div className="mb-3">
-                                    <label for="NewInputLast" className="form-label">Last Name</label>
+                                    <label htmlfor="NewInputLast" className="form-label">Last Name</label>
                                     <input type="text" className="form-control" id="NewInputLast"/>
                                 </div>
                                 <div className="mb-3">
-                                    <label for="NewInputEmail1" className="form-label">Email address</label>
+                                    <label htmlfor="NewInputEmail1" className="form-label">Email address</label>
                                     <input type="email" className="form-control" id="NewInputEmail1" aria-describedby="emailHelp"/>
                                 </div>
                                 <div className="mb-3">
-                                    <label for="NewInputPassword1" className="form-label">Password</label>
+                                    <label htmlfor="NewInputPassword1" className="form-label">Password</label>
                                     <input type="password" className="form-control" id="NewInputPassword1"/>
                                 </div>
         

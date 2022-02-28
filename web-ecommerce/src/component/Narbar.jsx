@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "./buttons/login";
 import Register from "./buttons/register";
-import "./navbar.css";
+import "./styles/navbar.css";
 import { Link } from "react-router-dom";
 /*I use Link to connect cart with route cart */
 

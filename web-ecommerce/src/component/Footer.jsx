@@ -31,7 +31,7 @@ const Footer = () =>{
   <div class="footer-copyright text-center py-3">© 2022 Copyright:
     <a class="navbar-brand" href="/">Home</a>
   </div>
-{/* Use redice instead of localhost*/}
+
 </footer>
        
     )
