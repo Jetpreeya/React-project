@@ -7,7 +7,7 @@ import ProductsDetail from './component/ProductsDetail';
 import Footer from './component/Footer';
 import { Routes, Route} from "react-router-dom";
 import Cart from './component/cart';
-import CartContainer from './component/CartContainer';
+
 
  
 /*Routing with React */
@@ -41,7 +41,7 @@ function App() {
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/Products" component={ <Product/>} />
         <Route exact path="/Products/:id" element={ <ProductsDetail/>} />
-        <Route exact path="/Cart" element={ <CartContainer/>} />
+        <Route exact path="/Cart" component={ <Cart/>} />
       </Routes>
       {show ? (
         <Product handleClick={handleClick} />

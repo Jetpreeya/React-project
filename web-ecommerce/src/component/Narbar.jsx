@@ -1,10 +1,11 @@
 import React from "react";
 import Login from "./buttons/login";
 import Register from "./buttons/register";
-import CartBtn from "./buttons/cartBtn";
-import './Home.css';
+// import CartBtn from "./buttons/cartBtn";
+import "./navbar.css";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setShow, size }) => {
     return (
       <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
         <div class="container-fluid">
@@ -16,9 +17,13 @@ const Navbar = () => {
               <a class="nav-link active " aria-current="page" href="/Products"><i class='fa fa-tag fa-2x'></i>
                     Product</a>
             </div>
+            {/* <CartBtn/> */}
             <Register/>
             <Login/>
-            <CartBtn/>
+            <div className="cart nav-link" onClick={() => (setShow(false))}>
+            <Link to="/Cart"><i className="fa fa-shopping-cart me-2 fa-2x"></i></Link>
+          <span>{size}</span>
+        </div>
         </div>
       </nav>
     );
