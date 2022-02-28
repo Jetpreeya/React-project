@@ -1,39 +1,16 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
 import DATA from '../Data'
+import Cards from "./card"; 
+import "./product.css";
 
-const Product = () =>{
-    const cardItem = (item) =>{
-        return(
-            <div class="card mb-4" style={{width: "16rem"}}>
-  <img src={item.img} class= "card-img-top" alt={item.title}/>
-  <div class="card-body text-center">
-    <h5 class="card-title">{item.title}</h5>
-    <p className="lead">{item.price} {" "} Kr</p>
-    <NavLink to= {`/products/${item.id}`} class="btn btn-outline-primary">BUY</NavLink>
-  </div>
-</div>
-
-        );
-    }
+const Product = ({ handleClick }) => {
     return (
-        <div>
-            <div className="container py-5"></div>
-            <div className="row">
-                <div className="col-12 text-center">
-                    <h1>Product</h1>
-                    <hr></hr>
-
-                </div>
-            </div>
-            <div className="container">
-                <div className="row justify-content-around">
-                    {DATA.map(cardItem)}
-                </div>
-            </div>
-
-        </div>
-    )
-}
-
-export default Product
+      <section>
+        {DATA.map((item) => (
+          <Cards key={item.id} item={item} handleClick={handleClick} />
+        ))}
+      </section>
+    );
+  };
+  
+  export default Product;

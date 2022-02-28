@@ -12,25 +12,25 @@ const Register = () => {
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="NewModal">Registration</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <form>
-                            <div class="mb-3">
-                                    <label for="NewInputName" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="NewInputName"/>
+                            <div className="mb-3">
+                                    <label for="NewInputName" className="form-label">First Name</label>
+                                    <input type="text" className="form-control" id="NewInputName"/>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="NewInputLast" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="NewInputLast"/>
+                                <div className="mb-3">
+                                    <label for="NewInputLast" className="form-label">Last Name</label>
+                                    <input type="text" className="form-control" id="NewInputLast"/>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="NewInputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="NewInputEmail1" aria-describedby="emailHelp"/>
+                                <div className="mb-3">
+                                    <label for="NewInputEmail1" className="form-label">Email address</label>
+                                    <input type="email" className="form-control" id="NewInputEmail1" aria-describedby="emailHelp"/>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="NewInputPassword1" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="NewInputPassword1"/>
+                                <div className="mb-3">
+                                    <label for="NewInputPassword1" className="form-label">Password</label>
+                                    <input type="password" className="form-control" id="NewInputPassword1"/>
                                 </div>
         
                                 <button type="submit" className="btn btn-success w-30 ms-3 ">Register</button>

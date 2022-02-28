@@ -26,9 +26,9 @@ const Login = () => {
                                 </div>
                                 <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                                        <label class="form-check-label" htmlFor="exampleCheck1">Remember me</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100 ">Login</button>
+                                <button type="submit" className="btn btn-primary w-100 ">Login</button>
 
                                 <div className= "modal-body">
                             <button className="btn btn-outline-info w-100 mb-4">
