@@ -7,10 +7,10 @@ import ProductsDetail from './component/ProductsDetail';
 import Footer from './component/Footer';
 import { Routes, Route} from "react-router-dom";
 import Cart from './component/cart';
+import Checkout from './component/checkout';
 
-
- 
 /*Routing with React */
+/*useState to show the products in the cart that click from buy button*/ 
 function App() {
   const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
@@ -35,13 +35,13 @@ function App() {
  
   return (
     <React.Fragment>
-      {/* <Navbar/> */}
       <Navbar setShow={setShow} size={cart.length} />
       <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/Products" component={ <Product/>} />
         <Route exact path="/Products/:id" element={ <ProductsDetail/>} />
         <Route exact path="/Cart" component={ <Cart/>} />
+        <Route exact path="/checkout" element={ <Checkout/>} />
       </Routes>
       {show ? (
         <Product handleClick={handleClick} />
