@@ -12,6 +12,15 @@ import Checkout from './component/checkout';
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/ 
 function App() {
+  const [loading, setLoading] = useState(false);
+  useEffect(() =>{
+    setLoading(true)
+    setTimeout(() =>{
+      setLoading(false)
+    }, 1000)
+    }, [])
+
+
   const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
  
@@ -32,8 +41,14 @@ function App() {
   useEffect(() => {
     console.log("cart change");
   }, [cart]);
- 
+
   return (
+    <div className="App">
+      {
+        loading ?
+        <h2>Loading...</h2>
+        :
+
     <React.Fragment>
       <Navbar setShow={setShow} size={cart.length} />
       <Routes>
@@ -50,6 +65,8 @@ function App() {
       )}
     <Footer/>
     </React.Fragment>
+    }
+    </div>
  
   );
 }
