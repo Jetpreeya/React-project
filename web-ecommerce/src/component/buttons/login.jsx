@@ -4,7 +4,7 @@ const Login = () => {
     return (
         <>
             <button type="button" className="btn btn-outline-success ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i className="fa fa-sign-in me-1 fa-2x"></i> Login
+            <i className="fa fa-user me-1 fa-2x"></i> Login
             </button>
 
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
