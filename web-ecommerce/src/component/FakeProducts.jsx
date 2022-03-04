@@ -4,6 +4,7 @@ const FakeProducts = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
     let componentMounted = true;
 
     useEffect(() => {
@@ -13,18 +14,17 @@ const FakeProducts = () => {
             if (componentMounted) {
                 setData(await response.clone().json());
                 setFilter(await response.json());
-                setLoading(false);
+                setLoading(false); /*If change from false to true the products will not show up*/
+                setError()
                 console.log(filter)
             }
-
             return () => {
                 componentMounted = false;
             }
-
         }
         getProducts();
     }, []);
-
+   
     const Loading = () => {
         return (
             <>
@@ -33,6 +33,14 @@ const FakeProducts = () => {
         )
     };
 
+    if (error) {
+        return (
+            <div className="App">
+                <p>Error fetching data :(</p>
+            </div>
+        );
+    }
+
     const ShowProducts = () => {
         return (
             <>
@@ -40,12 +48,12 @@ const FakeProducts = () => {
                     return (
                         <>
                             <div className="col-md-3 mb-4">
-                                <div class="card h-100 text-center p-4" key={product.id}>
-                                    <img src={product.image} class="card-img-top" alt={product.title} height="180px" />
-                                    <div class="card-body">
-                                        <h5 class="card-title mb-0">{product.title.substring(0, 12)}</h5>
-                                        <p class="card-text">{product.price} Kr</p>
-                                        <a href="/" class="btn btn-success">Buy</a>
+                                <div className="card h-100 text-center p-4" key={product.id}>
+                                    <img src={product.image} className="card-img-top" alt={product.title} height="180px" />
+                                    <div className="card-body">
+                                        <h5 className="card-title mb-0">{product.title.substring(0, 12)}</h5>
+                                        <p className="card-text">{product.price} Kr</p>
+                                        <a href="/" className="btn btn-success">Buy</a>
                                     </div>
                                 </div>
 
@@ -55,6 +63,7 @@ const FakeProducts = () => {
                 })}
             </>
         );
+        
     };
 
 
@@ -68,7 +77,7 @@ const FakeProducts = () => {
                         <hr />
                     </div>
                 </div>
-                <div className="row justify-content-center">
+                <div className="row justify-content-center" >
                     {loading ? <Loading /> : <ShowProducts />}
                 </div>
             </div>

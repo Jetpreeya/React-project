@@ -13,7 +13,7 @@ const Checkout = () => {
                         </h4>
                         <ul>
                             {DATA.map((item) => (
-                                <li>
+                                <li key ={item.id} >
                                     <p className="my-4"><img src={item.img} alt="" style={{height: 20}} />{item.title}: Price {item.price} Kr </p></li>
                             ))}
                         </ul>

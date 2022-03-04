@@ -1,22 +1,23 @@
 import React from "react";
 import Login from "./buttons/login";
 import Register from "./buttons/register";
+import SearchBar from "./SearchForm"
 import "./styles/navbar.css";
 import { Link } from "react-router-dom";
 /*I use Link to connect cart with route cart */
 
 const Navbar = ({ setShow, size }) => {
     return (
-      <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
-        <div class="container-fluid">
-        <a class="navbar-brand" href="/">Home</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
+        <div className="container-fluid">
+        <a className="navbar-brand" href="/">Home</a>
+          <button className="navbar-toggler" type="button">
           </button>
           <div className="collapse navbar-collapse ms-1" >
-              <a class="nav-link active " aria-current="page" href="/Products"><i class='fa fa-tag fa-2x'></i>
+              <a className="nav-link active " aria-current="page" href="/Products"><i className='fa fa-tag fa-2x'></i>
                     Product</a>
             </div>
+            <SearchBar />
             <Register/>
             <Login/>
             <div className="cart nav-link" onClick={() => (setShow(false))}>
