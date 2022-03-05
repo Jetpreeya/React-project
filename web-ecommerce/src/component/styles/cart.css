@@ -87,3 +87,13 @@ header{
   margin-left:28%;
   padding:5%
 }
+
+.htmlFor {
+  position: relative;
+}
+
+.label {
+  float: left;
+  width: 10em;
+  margin-right: 1em;
+  }

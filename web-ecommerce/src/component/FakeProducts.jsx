@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 
 const FakeProducts = () => {
     const [data, setData] = useState([]);
@@ -44,11 +45,11 @@ const FakeProducts = () => {
     const ShowProducts = () => {
         return (
             <>
-                {filter.map((product) => {
+                {filter.map((product,id)  => {
                     return (
                         <>
                             <div className="col-md-3 mb-4">
-                                <div className="card h-100 text-center p-4" key={product.id}>
+                                <div className="card h-100 text-center p-4" key={id}>
                                     <img src={product.image} className="card-img-top" alt={product.title} height="180px" />
                                     <div className="card-body">
                                         <h5 className="card-title mb-0">{product.title.substring(0, 12)}</h5>
@@ -65,7 +66,6 @@ const FakeProducts = () => {
         );
         
     };
-
 
     return (
         <div>
@@ -84,6 +84,11 @@ const FakeProducts = () => {
 
         </div>
     )
+}
+
+FakeProducts.propTypes = {
+    price : PropTypes.number,
+    title : PropTypes.string,
 }
 
 export default FakeProducts

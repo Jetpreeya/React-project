@@ -31,13 +31,13 @@ nav {
   color: rgb(19, 17, 17);
 }
 .cart span:nth-child(2) {
-  padding: 0 3px;
+  padding: 2px;
   background-color: red;
   color: rgb(15, 14, 14);
   font-weight: bolx;
   border-radius: 5px;
-  position: relative;
-  top: -15px;
+  position: absolute;
+  top: auto;
 }
 
 

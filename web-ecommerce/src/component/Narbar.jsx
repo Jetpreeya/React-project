@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "./buttons/login";
 import Register from "./buttons/register";
-import SearchBar from "./SearchForm"
+import SearchBar  from "./SearchForm"
 import "./styles/navbar.css";
 import { Link } from "react-router-dom";
 /*I use Link to connect cart with route cart */
@@ -17,7 +17,7 @@ const Navbar = ({ setShow, size }) => {
               <a className="nav-link active " aria-current="page" href="/Products"><i className='fa fa-tag fa-2x'></i>
                     Product</a>
             </div>
-            <SearchBar />
+            <SearchBar /> 
             <Register/>
             <Login/>
             <div className="cart nav-link" onClick={() => (setShow(false))}>

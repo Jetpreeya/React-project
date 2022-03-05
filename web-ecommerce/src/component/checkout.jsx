@@ -1,8 +1,9 @@
-import React from "react";
-import DATA from '../Data'
+import React, { useState } from "react";
 import "./styles/cart.css";
+import DATA from '../Data'
 
 const Checkout = () => {
+
     return (
         <>
             <div className="container my-5">
@@ -13,11 +14,15 @@ const Checkout = () => {
                         </h4>
                         <ul>
                             {DATA.map((item) => (
-                                <li key ={item.id} >
-                                    <p className="my-4"><img src={item.img} alt="" style={{height: 20}} />{item.title}: Price {item.price} Kr </p></li>
+                                <div className="cart_box" key={item.id}>
+                                    <div className="cart_img">
+                                        <img src={item.img} alt="" />
+                                        <p>{item.title}</p> 
+                                        </div>
+                                        <h6> Price: {item.price} kr</h6>
+                                    </div>
                             ))}
                         </ul>
-
                         <div className="btn btn-success ms-5" >
                             <h3>Total 399.6 Kr</h3>
                         </div>
