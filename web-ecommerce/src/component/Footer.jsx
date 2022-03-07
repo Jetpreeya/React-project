@@ -28,7 +28,7 @@ const Footer = () =>{
     </ul>
 
   </div>
-  <div className="footer-copyright text-center py-3">© 2022 Copyright:
+  <div className="footer-copyright text-center py-3">© {new Date().getFullYear()} Copyright:
     <a className="navbar-brand" href="/">Home</a>
   </div>
 

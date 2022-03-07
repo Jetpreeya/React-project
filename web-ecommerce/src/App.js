@@ -8,7 +8,7 @@ import Footer from './component/Footer';
 import { Routes, Route} from "react-router-dom";
 import Cart from './component/cart';
 import Checkout from './component/checkout';
-import FakeProducts from './component/FakeProducts'
+import FetchProducts from './component/FetchProducts'
 
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/ 
@@ -53,18 +53,18 @@ function App() {
     <React.Fragment>
       <Navbar setShow={setShow} size={cart.length} />
       <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route exact path="/Products" component={ <Product/>} />
-        <Route exact path="/Products/:id" element={ <ProductsDetail/>} />
-        <Route exact path="/Cart" component={ <Cart/>} />
-        <Route exact path="/Checkout" element={ <Checkout/>} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/Products" component={ <Product/>} />
+        <Route path="/Products/:id" element={ <ProductsDetail/>} />
+        <Route path="/Cart" component={ <Cart/>} />
+        <Route path="/Checkout" element={ <Checkout/>} />
       </Routes>
       {show ? (
         <Product handleClick={handleClick} />
       ) : (
         <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
       )}
-      <FakeProducts/>
+      <FetchProducts/>
     <Footer/>
     </React.Fragment>
     }

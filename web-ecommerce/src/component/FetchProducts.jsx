@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 
-const FakeProducts = () => {
+const FetchProducts = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
@@ -86,9 +86,10 @@ const FakeProducts = () => {
     )
 }
 
-FakeProducts.propTypes = {
+FetchProducts.propTypes = {
+    id : PropTypes.number,
     price : PropTypes.number,
     title : PropTypes.string,
 }
 
-export default FakeProducts
+export default FetchProducts

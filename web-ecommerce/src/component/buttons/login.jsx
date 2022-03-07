@@ -32,10 +32,10 @@ const Login = () => {
 
                                 <div className= "modal-body">
                             <button className="btn btn-outline-info w-100 mb-4">
-                                <span className="fa fa-google me-2"></span> Log In With Google 
+                                <span className="fa fa-google me-2"></span> Login With Google 
                             </button>
                             <button className="btn btn-outline-info w-100 mb-2">
-                                <span className="fa fa-facebook me-2"></span> Log In With Facebook 
+                                <span className="fa fa-facebook me-2"></span> Login With Facebook 
                             </button>
                             </div>
                             </form>

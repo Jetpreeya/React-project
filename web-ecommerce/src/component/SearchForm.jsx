@@ -13,15 +13,26 @@ const SearchBar = () => {
             item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
         )
     });
-    return (
-            <div className="input-group input-group-rounded py-4">
-                  <input type="text" className="from-control" value={filter} onChange={searchText.bind(this)}/>
-                <span className="input-group-text border-4" id="search-addon">
-                    <i className="fa fa-search"></i>
-                </span>
-             </div>
-            )
-    }
+        return (
+            <section className="py-4 container">
+                <div className = "row justify-content-center">
+                    <div className="col-12 mb-5">
+                        <div className ="mb-3 col-4 mx-auto text-center">
+                            <h2 className ="form-label h4"> Search</h2>
+                            <input type ="text" className ="from-control" value={filter} onChange = {searchText.bind(this)}/>
 
+                        </div>
+                    </div>
+
+                    
+
+
+                   
+                    </div>
+            </section>
+        )
+            
+    
+}
 
 export default SearchBar  

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles/cart.css";
 import DATA from '../Data'
 
 const Checkout = () => {
-
     return (
         <>
             <div className="container my-5">
@@ -20,7 +19,7 @@ const Checkout = () => {
                                         <p>{item.title}</p> 
                                         </div>
                                         <h6> Price: {item.price} kr</h6>
-                                    </div>
+                                    </div>     
                             ))}
                         </ul>
                         <div className="btn btn-success ms-5" >

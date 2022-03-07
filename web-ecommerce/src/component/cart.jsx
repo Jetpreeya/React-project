@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/cart.css";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const Cart = ({ cart, setCart, handleChange }) => {
   const [price, setPrice] = useState(0);
@@ -55,5 +56,10 @@ const Cart = ({ cart, setCart, handleChange }) => {
     </>
   );
 };
+
+Cart.propTypes = {
+  price : PropTypes.number,
+  amount: PropTypes.number
+}
 
 export default Cart;
