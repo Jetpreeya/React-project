@@ -4,6 +4,9 @@ import Register from "./buttons/register";
 import SearchBar  from "./SearchForm"
 import "./styles/navbar.css";
 import { Link } from "react-router-dom";
+import CartBtn from  "./buttons/cartIcon";
+
+
 /*I use Link to connect cart with route cart */
 
 const Navbar = ({ setShow, size }) => {
@@ -20,6 +23,7 @@ const Navbar = ({ setShow, size }) => {
             <SearchBar /> 
             <Register/>
             <Login/>
+            <CartBtn/>
             <div className="cart nav-link" onClick={() => (setShow(false))}>
             <Link to="/Cart"><i className="fa fa-shopping-cart me-2 fa-2x"></i></Link>
           <span>{size}</span>
