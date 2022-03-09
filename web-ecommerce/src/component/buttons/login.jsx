@@ -15,7 +15,7 @@ const Login = () => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <form>
+                            <form >
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>

@@ -9,7 +9,7 @@ import { Routes, Route} from "react-router-dom";
 import Cart from './component/cart';
 import Checkout from './component/checkout';
 import FetchProducts from './component/FetchProducts'
-import CartContainer from './component/CartContainer';
+import CartContainer from './component/context/CartContainer';
 
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/ 
