@@ -9,6 +9,7 @@ import { Routes, Route} from "react-router-dom";
 import Cart from './component/cart';
 import Checkout from './component/checkout';
 import FetchProducts from './component/FetchProducts'
+import CartContainer from './component/CartContainer';
 
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/ 
@@ -58,6 +59,7 @@ function App() {
         <Route path="/Products/:id" element={ <ProductsDetail/>} />
         <Route path="/Cart" component={ <Cart/>} />
         <Route path="/Checkout" element={ <Checkout/>} />
+        <Route path="/CartContainer" element={<CartContainer/>} />
       </Routes>
       {show ? (
         <Product handleClick={handleClick} />
@@ -74,4 +76,3 @@ function App() {
 }
  
 export default App;
-

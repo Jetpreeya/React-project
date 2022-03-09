@@ -7,11 +7,16 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AppProvider } from './component/context';
 
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+  <React.StrictMode>
+    <AppProvider>
+      <App />
+    </AppProvider>
+  </React.StrictMode>
   </BrowserRouter>,
   document.getElementById('root')
 );
