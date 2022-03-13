@@ -1,6 +1,7 @@
 import { useParams } from 'react-router'
 import DATA from '../Data';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 const ProductsDetail = () => {
     const proid = useParams();
@@ -13,7 +14,8 @@ const ProductsDetail = () => {
     return (
         <>
             <div className="container my-5 py-3">
-                <a className="nav-link active " aria-current="page" href="/Products"><button className="btn-close float-end" aria-label="close"></button></a>
+            <a className="nav-link active " aria-current="page" href="/Products"><i className="btn-close float-end" aria-label="close"></i>
+                   </a>
                 <div className="row">
                     <div className="col-md-6 d-flex justify-content-center mx-auto product">
                         <img src={product.img} alt={product.title} height="380px" />
