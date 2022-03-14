@@ -30,6 +30,7 @@ const Footer = () =>{
   </div>
   <div className="footer-copyright text-center py-3">© {new Date().getFullYear()} Copyright:
     <a className="navbar-brand" href="/">Home</a>
+    <a className="navbar-brand" href="/Products">Products</a>
   </div>
 
 </footer>
