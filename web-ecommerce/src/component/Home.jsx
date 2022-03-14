@@ -1,9 +1,11 @@
 import React from 'react';
 
-
 function Home() {
     return (
       <div>
+        <div className = "text-center">
+        <h2 style={{color: "SteelBlue"}}>Welcome to Jet E-commerce Website</h2>
+        </div>
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
