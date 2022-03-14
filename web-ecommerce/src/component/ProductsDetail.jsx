@@ -1,7 +1,6 @@
 import { useParams } from 'react-router'
 import DATA from '../Data';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
 
 const ProductsDetail = () => {
     const proid = useParams();

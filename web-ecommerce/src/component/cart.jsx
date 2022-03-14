@@ -26,9 +26,9 @@ const Cart = ({ cart, setCart, handleChange }) => {
   return (
     <>
     <article>
-    <header>
-    <h2>your cart <i className='fa fa-shopping-basket me-1 fa-2x'></i></h2>
-    </header>
+    <div className = "text-center">
+    <h2>Your cart <i className='fa fa-shopping-basket me-1 fa-2x'></i></h2>
+    </div>
       {cart.map((item) => (
         <div className="cart_box" key={item.id}>
           <div className="cart_img">
@@ -47,13 +47,15 @@ const Cart = ({ cart, setCart, handleChange }) => {
         </div>
       ))}
       <div className="total">
-        <span>Total Price of your Cart</span>
+        <span>Total Price </span>
         <span>{price} Kr</span>
       </div>
       </article>
-      <div className="checkout">
-      <Link to="/Checkout" className= "btn btn-success ms-2"> Process to Checkout</Link>
+      <br></br>
+      <div className = "text-center">
+      <Link to="/Checkout" className= "btn btn-success"> Process to Checkout</Link>
       </div>
+      
     </>
   );
 };

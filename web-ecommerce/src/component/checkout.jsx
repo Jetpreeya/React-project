@@ -8,8 +8,8 @@ const Checkout = () => {
             <div className="container my-5">
                 <div className="row">
                     <div className="col-md-4 order-md-2 mb-4">
-                        <h4 className="d-flex justify-content-between align-items-center mb-3">
-                            <span className="text-muted ms-5">Your cart <i className='fa fa-shopping-basket me-1'></i></span>
+                        <h4 className="d-flex justify-content-between mb-3">
+                            <span className="text-muted ms-2">Your cart <i className='fa fa-shopping-basket me-1'></i></span> 
                         </h4>
                         <ul>
                             {DATA.map((item) => (
@@ -28,7 +28,9 @@ const Checkout = () => {
                     </div>
                     {/* Information customer in left side of the page */}
                     <div className="col-md-8 order-md-1">
+                    <div className = "text-center">
                         <h4 className="mb-3">Address</h4>
+                        </div>
                         <form className="needs-validation" novalidate="" />
                         <div className="row">
                             <div className="col-md-6 mb-3">
@@ -47,14 +49,14 @@ const Checkout = () => {
                             </div>
                         </div>
 
-                        <div className="mb-3">
+                        <div className="col-md-6 mb-3">
                             <label htmlFor="email">Email <span className="text-muted"></span></label>
-                            <input type="email" className="form-control" id="email" placeholder="you@example.com" />
+                            <input type="email" className="form-control" id="email" placeholder="you@gmail.com" />
                             <div className="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
-                        <div className="mb-3">
+                        <div className="col-md-6 mb-3">
                             <label htmlFor="phone">Moblie <span className="text-muted"></span></label>
                             <input type="tel" className="form-control" id="phone" placeholder="072-XXXXX12" />
                             <div className="invalid-feedback">
@@ -109,20 +111,22 @@ const Checkout = () => {
                             <label className="custom-control-label" htmlFor="save-info">Save this information for next time</label>
                         </div>
                         <hr className="mb-4" />
-                        <h4 className="mb-3">Payment</h4>
+                        <div className = "text-center">
+                        <h4 className="mb-3">Payment </h4>
+                        </div>
 
                         <div className="d-block my-3">
                             <div className="custom-control custom-radio">
                                 <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" checked="" required="" />
-                                <label className="custom-control-label" htmlFor="credit">Credit card</label>
+                                <label className="custom-control-label" htmlFor="credit">Credit card <i class="fa fa-cc-visa" aria-hidden="true"></i></label>
                             </div>
                             <div className="custom-control custom-radio">
                                 <input id="debit" name="paymentMethod" type="radio" className="custom-control-input" required="" />
-                                <label className="custom-control-label" htmlFor="debit">Debit card</label>
+                                <label className="custom-control-label" htmlFor="debit">Debit card <i class="fa fa-cc-mastercard" aria-hidden="true"></i></label>
                             </div>
                             <div className="custom-control custom-radio">
                                 <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required="" />
-                                <label className="custom-control-label" htmlFor="paypal">PayPal</label>
+                                <label className="custom-control-label" htmlFor="paypal">PayPal <i class="fa fa-cc-paypal" aria-hidden="true"></i></label>
                             </div>
                         </div>
                         <div className="row">
