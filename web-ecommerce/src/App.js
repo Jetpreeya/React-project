@@ -10,10 +10,12 @@ import Cart from './component/cart';
 import Checkout from './component/checkout';
 import FetchProducts from './component/FetchProducts'
 import CartContainer from './component/context/CartContainer';
+import data from "./Data.json"
 
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/ 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   useEffect(() =>{
     setLoading(true)
@@ -48,8 +50,10 @@ function App() {
     <div className="App">
       {
         loading ?
-        <h2>Loading...</h2>
+        <div className = "text-center">
+        <h2>Loading...</h2></div>
         :
+     
 
     <React.Fragment>
       <Navbar setShow={setShow} size={cart.length} />
@@ -57,6 +61,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/Products" component={ <Product/>} />
         <Route path="/Products/:id" element={ <ProductsDetail/>} />
+        <Route path="/Fetch" element={ <FetchProducts/>} />
         <Route path="/Cart" component={ <Cart/>} />
         <Route path="/Checkout" element={ <Checkout/>} />
         <Route path="/CartContainer" element={<CartContainer/>} />
@@ -67,6 +72,39 @@ function App() {
         <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
       )}
       <FetchProducts/>
+      {/* Search function Here*/}
+      <div className="templateContainer">
+      <a className="nav-link active " aria-current="page" href="/"><i className="btn-close float-end" aria-label="close"></i>
+                   </a>
+      <form class="form-inline my-2 my-lg-0">
+        <input id="searchInput" type="text" placeholder="Search here..." onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }} />
+      </form>
+      <div className="template_Container">
+          {
+            data 
+              .filter((val) => {
+                if(searchTerm === ""){
+                  return val;
+                }else if(val.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val;
+                }
+              })
+              .map((val) => {
+                return(
+                 
+                  <div className="template" key={val.id}>
+                      <img src={val.img} alt="" height="100px"/>
+                      <h3>{val.title}</h3>
+                      <p className="price">{val.price} Kr</p>
+                      <button onClick={() => handleClick(val)}>Add to Cart</button>
+                  </div> 
+                )
+              })
+          }
+        </div> 
+        </div>
     <Footer/>
     </React.Fragment>
     }
