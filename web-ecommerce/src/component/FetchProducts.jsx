@@ -17,7 +17,7 @@ const FetchProducts = (handleClick) => {
                 setFilter(await response.json());
                 setLoading(false); /*If change from false to true the products will not show up*/
                 setError()
-                console.log(filter)
+               
             }
             return () => {
                 componentMounted = false;
@@ -48,7 +48,7 @@ const FetchProducts = (handleClick) => {
                 {filter.map((item,id)  => {
                     return (
                         <>
-                            <div className="col-md-3 mb-4">
+                            <div className="col-md-3 mb-4" key={id}>
                                 <div className="card h-100 text-center p-4" key={id}>
                                     <img src={item.image} className="card-img-top" alt={item.title} height="180px" />
                                     <div className="card-body">
@@ -69,8 +69,8 @@ const FetchProducts = (handleClick) => {
     };
 
     return (
-        <div>
-            <div className="container">
+        <div >
+            <div className="container" >
                 <div className="row">
                 <div className = "text-center">
                         <hr />

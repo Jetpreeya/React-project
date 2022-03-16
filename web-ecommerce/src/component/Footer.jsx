@@ -20,13 +20,19 @@ const Footer = () => {
               <i className="fa fa-linkedin"> LinkedIn </i>
             </a>
           </li>
+          <li className="list-inline-item">
+            <a className="btn-floating btn-li mx-1 " href="youtube.com">
+              <i className="fa fa-youtube"> Youtube </i>
+            </a>
+          </li>
         </ul>
 
       </div>
      
       <div className="footer-copyright text-center py-3">© {new Date().getFullYear()} Copyright: 
       <ul className="list-unstyled list-inline text-center text-light">
-      <li ><a className="navbar-brand text-light" href="/"> Home</a></li>
+      <li ><a className="navbar-brand text-light" href="/"> Home Page</a></li>
+      <li ><a className="navbar-brand text-light" href="/Fetch">Fetch Products</a></li>
       <li ><a className="navbar-brand text-light" href="/Products">Products</a></li>
         </ul>
 

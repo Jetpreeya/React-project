@@ -12,6 +12,8 @@ import FetchProducts from './component/FetchProducts'
 import CartContainer from './component/context/CartContainer';
 import data from "./Data.json"
 import "./component/styles/SearchForm.css"
+import { AuthProvider } from './component/buttons/Auth'
+import Dashboard from './dashboard'
 
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/
@@ -55,9 +57,9 @@ function App() {
             <h2>Loading...</h2></div>
           :
 
-
           <React.Fragment>
             <Navbar setShow={setShow} size={cart.length} />
+            <AuthProvider>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Products" component={<Product />} />
@@ -66,20 +68,24 @@ function App() {
               <Route path="/Cart" component={<Cart />} />
               <Route path="/Checkout" element={<Checkout />} />
               <Route path="/CartContainer" element={<CartContainer />} />
+              <Route path="/dashboard" element={<Dashboard/>} />
             </Routes>
+            </AuthProvider>
             {show ? (
               <Product handleClick={handleClick} />
             ) : (
               <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
             )}
             <FetchProducts />
+            {/* Search function Here 
+            and I don't know yet I will out search bar on the top or below */}
             {/* Search function Here*/}
             <div className="templateContainer">
               <a className="nav-link active " aria-current="page" href="/"><i className="btn-close float-end" aria-label="close"></i>
               </a>
               <div className="text-center">
                 <div className="cart nav-link" onClick={() => (setShow(false))}>
-                  <button class="btn btn-primary"> Search</button>
+                  <button className="btn btn-primary"> Search</button>
                   <input id="searchInput" type="text" placeholder="Search here..." onChange={(event) => {
                     setSearchTerm(event.target.value);
                   }} />
