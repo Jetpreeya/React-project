@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Home() {
-    return (
+    return (  
       <div>
         <div className = "text-center">
         <h2 style={{color: "SteelBlue"}}>Welcome to Jet E-commerce Website</h2>
