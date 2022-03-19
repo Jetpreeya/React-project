@@ -3,7 +3,7 @@ import "./styles/cart.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-const Cart = ({ cart, setCart, handleChange }) => {
+const Cart = ({ cart, setCart, handleChange,setShow }) => {
   const [price, setPrice] = useState(0);
   
   const handleRemove = (id) => {
@@ -22,6 +22,16 @@ const Cart = ({ cart, setCart, handleChange }) => {
     handlePrice();
   });
 
+  if (cart.length === 0) {
+    return (
+      <>
+        <div className = "text-center" style = {{height:"90vh"}}>
+          <h2>Your cart <i className="fa fa-shopping-basket fa-2x" aria-hidden="true"></i></h2>
+          <h4 className='empty-cart'>is currently empty</h4>
+          </div>
+          </>
+    )
+  }
 
   return (
     <>
@@ -46,14 +56,16 @@ const Cart = ({ cart, setCart, handleChange }) => {
           </div>
         </div>
       ))}
-      <div className="total">
+      <div className="total" >
         <span>Total Price </span>
         <span>{price} Kr</span>
       </div>
       </article>
       <br></br>
-      <div className = "text-center">
+      <div className="cart nav-link" onClick={() => (setShow(false))}>
+      <div className = "text-center" style = {{height:"50vh"}}>
       <Link to="/Checkout" className= "btn btn-success"> Process to Checkout</Link>
+      </div>
       </div>
       
     </>
