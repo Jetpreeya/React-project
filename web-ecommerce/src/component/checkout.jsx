@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState} from "react";
 import "./styles/cart.css";
+import { Link } from "react-router-dom";
 import DATA from '../Data'
 
 const Checkout = () => {
+    // const [cart] = useState([]);
+    // const [price] = useState(0);
+    
     return (
         <>
             <div className="container my-5">
@@ -22,8 +26,10 @@ const Checkout = () => {
                                     </div>     
                             ))}
                         </ul>
+                        <div className = "text-center">
                         <div className="btn btn-success ms-5" >
-                            <h3>Total 399.6 Kr</h3>
+                            <h3>Total 399 Kr</h3>
+                        </div>
                         </div>
                     </div>
                     {/* Information customer in left side of the page */}
@@ -34,14 +40,14 @@ const Checkout = () => {
                         <form className="needs-validation" novalidate="" />
                         <div className="row">
                             <div className="col-md-6 mb-3">
-                                <label htmlFor="firstName">First name</label>
+                                <label htmlFor="firstName">First name<span className="text-muted"></span></label>
                                 <input type="text" className="form-control" id="firstName" placeholder="" value="" required="" />
                                 <div className="invalid-feedback">
                                     Valid first name is required.
                                 </div>
                             </div>
                             <div className="col-md-6 mb-3">
-                                <label htmlFor="lastName">Last name</label>
+                                <label htmlFor="lastName">Last name<span className="text-muted"></span></label>
                                 <input type="text" className="form-control" id="lastName" placeholder="" value="" required="" />
                                 <div className="invalid-feedback">
                                     Valid last name is required.
@@ -165,7 +171,7 @@ const Checkout = () => {
                         <div>
                             <div>
                                 <hr className="mb-4" />
-                                <button className="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                                <Link to="/deliver" className= "btn btn-success"> Continue to checkout</Link>
 
                             </div>
                         </div>
