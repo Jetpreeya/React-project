@@ -1,21 +1,28 @@
-import React from 'react'
-import firebaseConfig from '../../config'
-
-
+import React, { useState } from 'react'
+import fakeAuth from "fake-auth";
 
 // For Login I want to click Login and Show message that you are login 
-const Login = () => {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const { email, password } = e.target.elements;
-        try {
-            firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value);
-        } catch (error) {
-            alert(error);
-        }
-    }
+const Login = (props) => {
+    const [ setError] = useState();
+    const google = () => {
+        window.open("https://www.google.com/", "_self");
+    };
+    const facebook = () => {
+        window.open("https://www.facebook.com/", "_self");
+    };
 
-   
+    const handleSubmit = (email, pass) => {
+        fakeAuth
+            .signin(email, pass)
+            .then((response) => {
+                props.onSignin(response.user);
+            })
+            .catch((error) => {
+                setError(error);
+            });
+    };
+
+
     return (
         <>
             <button type="button" className="btn btn-outline-success ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -30,38 +37,45 @@ const Login = () => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <form onSubmit={handleSubmit}>
+                            <form
+                                onSubmit={(event) => {
+                                    const [email, pass] = event.target.children;
+                                    handleSubmit(email, pass);
+                                }}>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                                    <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+                                    <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                    <input type="password" name="password" className="form-control" id="exampleInputPassword1" required/>
+                                    <input type="password" name="password" className="form-control" id="exampleInputPassword1" required />
                                 </div>
                                 <div className="mb-3 form-check">
                                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                     <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
                                 </div>
-
-                                <button type="submit" className="btn btn-primary w-100 "> Login </button>
+                                <button type="submit" className="btn btn-primary w-100 ">Login</button>
 
 
                                 <div className="modal-body">
-                                    <button className="btn btn-outline-info w-100 mb-4">
-                                        <span className="fa fa-google me-2"></span> Login With Google
-                                    </button>
-                                    <button className="btn btn-outline-info w-100 mb-2">
-                                        <span className="fa fa-facebook me-2"></span> Login With Facebook
-                                    </button>
+                                    <div className="loginButton google" onClick={google}>
+                                        <button className="btn btn-outline-info w-100 mb-4">
+                                            <span className="fa fa-google me-2"></span> Login With Google
+                                        </button>
+                                    </div>
+                                    <div className="loginButton google" onClick={facebook}>
+                                        <button className="btn btn-outline-info w-100 mb-2">
+                                            <span className="fa fa-facebook me-2"></span> Login With Facebook
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                             <p>
-                        Need an Account?<br />
-                        <span className="line">
-                            <a href="/">Register</a>
-                        </span>
-                    </p>
+                                Need an Account?<br />
+                                <span className="line">
+                                    <a href="/">Register</a>
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -72,4 +86,3 @@ const Login = () => {
 }
 
 export default Login
-
