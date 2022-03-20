@@ -10,7 +10,7 @@ import Cart from './component/cart';
 import Checkout from './component/checkout';
 import FetchProducts from './component/FetchProducts'
 import CartContainer from './component/context/CartContainer';
-import data from "./Data.json"
+// import data from "./Data.json"
 import "./component/styles/SearchForm.css"
 import { AuthProvider } from './component/buttons/Auth'
 import Dashboard from './dashboard'
@@ -19,7 +19,7 @@ import Diliver from './component/Diliver'
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [ setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true)
@@ -104,9 +104,8 @@ function App() {
               </div>
 
               <div className="template_Container">
-                {
-                  data
-                    .filter((val) => {
+                {/* {
+                  data.filter((val) => {
                       if (searchTerm === "") {
                         return val;
                       } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -123,7 +122,7 @@ function App() {
                         </div>
                       )
                     })
-                }
+                } */}
               </div>
             </div>
             <Footer/>
