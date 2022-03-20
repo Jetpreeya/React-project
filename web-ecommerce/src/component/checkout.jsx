@@ -1,11 +1,21 @@
-import React, { useState} from "react";
+import React, { useState,useEffect} from "react";
 import "./styles/cart.css";
 import { Link } from "react-router-dom";
-import DATA from '../Data'
 
-const Checkout = () => {
-    // const [cart] = useState([]);
-    // const [price] = useState(0);
+
+const Checkout = ({cart}) => {
+    // const [cart] = useState(DATA);
+    // console.log('cart from chkout',cart);
+    const [price, setPrice] = useState(0);
+    const handlePrice = () => {
+        let ans = 0;
+        cart.map((item) => (ans += item.amount * item.price));
+        setPrice(ans);
+      };
+    
+      useEffect(() => {
+        handlePrice();
+      });
     
     return (
         <>
@@ -16,11 +26,12 @@ const Checkout = () => {
                             <span className="text-muted ms-2">Your cart <i className='fa fa-shopping-basket me-1'></i></span> 
                         </h4>
                         <ul>
-                            {DATA.map((item) => (
+                            {cart.map((item) => (
                                 <div className="cart_box" key={item.id}>
                                     <div className="cart_img">
                                         <img src={item.img} alt="" />
-                                        <p>{item.title}</p> 
+                                        <p>{item.title}</p>
+                                        <p>({item.amount})</p>
                                         </div>
                                         <h6> Price: {item.price} kr</h6>
                                     </div>     
@@ -28,7 +39,7 @@ const Checkout = () => {
                         </ul>
                         <div className = "text-center">
                         <div className="btn btn-success ms-5" >
-                            <h3>Total 399 Kr</h3>
+                            <h3>Total {price} Kr</h3>
                         </div>
                         </div>
                     </div>

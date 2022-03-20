@@ -14,6 +14,7 @@ import data from "./Data.json"
 import "./component/styles/SearchForm.css"
 import { AuthProvider } from './component/buttons/Auth'
 import Dashboard from './dashboard'
+import Diliver from './component/Diliver'
 
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/
@@ -56,7 +57,6 @@ function App() {
           <div className="text-center">
             <h2>Loading...</h2></div>
           :
-
           <React.Fragment>
             <Navbar setShow={setShow} size={cart.length} />
             <AuthProvider>
@@ -66,16 +66,24 @@ function App() {
               <Route path="/Products/:id" element={<ProductsDetail />} />
               <Route path="/Fetch" element={<FetchProducts />} />
               <Route path="/Cart" component={<Cart />} />
-              <Route path="/Checkout" element={<Checkout />} />
-              <Route path="/CartContainer" element={<CartContainer />} />
+              <Route path="/Checkout" element={<Checkout cart={cart}/>} />
+              <Route path="/CartContainer" element={<CartContainer cart={cart}/>} />
               <Route path="/dashboard" element={<Dashboard/>} />
+              <Route path="/deliver" element={<Diliver/>} />
             </Routes>
             </AuthProvider>
             {show ? (
               <Product handleClick={handleClick} />
             ) : (
               <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
-            )}
+            )
+            }
+            {show ? (
+              <Product handleClick={handleClick} />
+            ) : (
+              <Checkout cart={cart} setCart={setCart}/>
+            )
+            }
             <FetchProducts />
             {/* Search function Here 
             and I don't know yet I will out search bar on the top or below */}

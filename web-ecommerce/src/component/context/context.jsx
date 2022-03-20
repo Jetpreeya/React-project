@@ -1,12 +1,12 @@
-import React, { useContext, useReducer, useEffect } from 'react'
-import DATA from '../../Data'
+import React, { useContext, useReducer, useEffect,  } from 'react'
+import Data from '../../Data'
 import reducer from './reducer'
 
 const AppContext = React.createContext()
 
 const initialState = {
   loading: false,
-  cart: DATA,
+  cart: Data,
   total: 0,
   amount: 0,
 }
