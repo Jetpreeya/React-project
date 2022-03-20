@@ -2,7 +2,6 @@ import React, { useState,useEffect} from "react";
 import "./styles/cart.css";
 import { Link } from "react-router-dom";
 
-
 const Checkout = ({cart}) => {
     // const [cart] = useState(DATA);
     // console.log('cart from chkout',cart);
@@ -48,7 +47,7 @@ const Checkout = ({cart}) => {
                     <div className = "text-center">
                         <h4 className="mb-3">Address</h4>
                         </div>
-                        <form className="needs-validation" novalidate="" />
+                        <form className="needs-validation" noValidate="" />
                         <div className="row">
                             <div className="col-md-6 mb-3">
                                 <label htmlFor="firstName">First name<span className="text-muted"></span></label>

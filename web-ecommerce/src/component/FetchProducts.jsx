@@ -19,12 +19,9 @@ const FetchProducts = (handleClick) => {
                 setError()
                
             }
-            return () => {
-                componentMounted = false;
-            }
         }
         getProducts();
-    }, []);
+    });
    
     const Loading = () => {
         return (
