@@ -12,15 +12,19 @@ const Navbar = ({ setShow, size }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/"> Home</a>
+      <Link to="/"><i className="btn btn-outline fa fa-home me-2 fa-2x">Home</i></Link>
+        {/* <a className="navbar-brand" href="/"> Home</a> */}
         <button className="navbar-toggler" type="button">
         </button>
-        <div className="collapse navbar-collapse ms-1" >
-          <a className="btn btn-outline-secondary ms-2  " aria-current="page" href="/Products"><i className='fa fa-tag fa-2x'></i>
-            Product</a>
-          <a className="btn btn-outline-warning ms-2" aria-current="page" href="/Fetch"><i className='fa fa-tags fa-2x'></i>
-            Fetch Product</a>
-        </div>
+        <div className="collapse navbar-collapse ms-1 " >
+          <div className ="btn btn-outline-warning ms-2">
+          <Link to="/Products"><i className='fa fa-tag fa-2x'>Product</i></Link>
+          </div>
+          <div className ="btn btn-outline-warning ms-2">
+          <Link to="/Fetch"><i className='fa fa-tags fa-2x'></i>Fetch Product</Link>
+          </div>
+          </div>
+        
         <Register />
         <Login />
         <CartBtn />
