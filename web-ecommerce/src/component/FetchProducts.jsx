@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 
-const FetchProducts = (handleClick) => {
+const FetchProducts = ({ handleClick }) => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
@@ -16,13 +16,16 @@ const FetchProducts = (handleClick) => {
                 setData(await response.clone().json());
                 setFilter(await response.json());
                 setLoading(false); /*If change from false to true the products will not show up*/
-                setError()
-               
+                setError()     
             }
+            return () => {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
+                componentMounted = false;
+            }          
         }
         getProducts();
-    });
-   
+    }, []);
+
     const Loading = () => {
         return (
             <>

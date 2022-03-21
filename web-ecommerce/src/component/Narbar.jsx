@@ -5,7 +5,6 @@ import "./styles/navbar.css";
 import { Link } from "react-router-dom";
 import CartBtn from "./buttons/cartIcon";
 
-
 /*I use Link to connect cart with route cart */
 
 const Navbar = ({ setShow, size }) => {

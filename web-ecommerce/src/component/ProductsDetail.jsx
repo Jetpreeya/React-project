@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 const ProductsDetail = () => {
     const proid = useParams();
-    const proDetail = DATA.filter(x => x.id = proid.id);
+    // eslint-disable-next-line eqeqeq
+    const proDetail = DATA.filter(x => x.id == proid.id);
     const product = proDetail[0];
     /*UseState Hook*/
     

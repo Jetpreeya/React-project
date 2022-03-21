@@ -10,7 +10,7 @@ import Cart from './component/cart';
 import Checkout from './component/checkout';
 import FetchProducts from './component/FetchProducts'
 import CartContainer from './component/context/CartContainer';
-// import data from "./Data.json"
+import data from "./Data.json"
 import "./component/styles/SearchForm.css"
 import { AuthProvider } from './component/buttons/Auth'
 import Dashboard from './dashboard'
@@ -19,7 +19,7 @@ import Diliver from './component/Diliver'
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/
 function App() {
-  const [ setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true)
@@ -78,12 +78,6 @@ function App() {
               <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
             )
             }
-            {show ? (
-              <Product handleClick={handleClick} />
-            ) : (
-              <Checkout cart={cart} setCart={setCart}/>
-            )
-            }
             <FetchProducts />
             {/* Search function Here 
             and I don't know yet I will out search bar on the top or below */}
@@ -104,7 +98,8 @@ function App() {
               </div>
 
               <div className="template_Container">
-                {/* {
+                {
+                  // eslint-disable-next-line array-callback-return
                   data.filter((val) => {
                       if (searchTerm === "") {
                         return val;
@@ -122,7 +117,7 @@ function App() {
                         </div>
                       )
                     })
-                } */}
+                }
               </div>
             </div>
             <Footer/>

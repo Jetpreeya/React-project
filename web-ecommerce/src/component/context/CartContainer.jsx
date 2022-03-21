@@ -12,8 +12,7 @@ const CartContainer = () => {
           <h2>Your cart <i className="fa fa-shopping-basket fa-2x" aria-hidden="true"></i></h2>
           <h4 className='empty-cart'>is currently empty</h4>
           </div>
-          </>
-           
+          </>   
     )
   }
   return (

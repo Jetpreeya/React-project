@@ -13,6 +13,20 @@
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  .container header .header-nav-area #nav_container  {
+    display:flex;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  #grid-floats .grid-item, #grid-flex .grid-item{
+      width: 50%;
+  }
+  #grid-floats .grid-item:nth-child(1) {
+      width: 97.5%;
+    }
+}
 .App-header {
   background-color: #051b47;
   min-height: 100vh;
