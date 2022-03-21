@@ -1,19 +1,19 @@
 import { useParams } from 'react-router'
 import DATA from '../Data';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 const ProductsDetail = () => {
     const proid = useParams();
-    const proDetail = DATA.filter(x => x.id = proid.id);
+    const proDetail = DATA.filter(x => x.id == proid.id);
     const product = proDetail[0];
-    
     /*UseState Hook*/
     
     return (
         <>
             <div className="container my-5 py-3">
-            <a className="nav-link active " aria-current="page" href="/Products"><i className="btn-close float-end" aria-label="close"></i>
-                   </a>
+            <Link to="/Products"><i className="btn-close float-end" aria-label="close"></i>
+                   </Link>
                 <div className="row">
                     <div className="col-md-6 d-flex justify-content-center mx-auto product">
                         <img src={product.img} alt={product.title} height="380px" />
