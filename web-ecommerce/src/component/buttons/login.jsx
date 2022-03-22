@@ -1,8 +1,10 @@
 import React from 'react'
 import firebaseConfig from '../../config'
 
-
 const Login = () => {
+    const sayHello=() => {
+        alert('You are logged in !');
+      }
     const google = () => {
         window.open("https://www.google.com/", "_self");
     };
@@ -12,20 +14,13 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const { email, password } = e.target.elements;
-
         try {
-
             firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value);
-
         } catch(error) {
             alert(error);
         }
     }
-
-
-    
 return (
     <>
         <button type="button" className="btn btn-outline-success ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -57,9 +52,8 @@ return (
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                 <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
                             </div>
-                            <button type="submit" className="btn btn-primary w-100 ">Login</button>
-
-
+                            <button type="submit" className="btn btn-primary w-100 " onClick={sayHello}>Login</button>
+                            
                             <div className="modal-body">
                                 <div className="loginButton google" onClick={google}>
                                     <button className="btn btn-outline-info w-100 mb-4">
@@ -83,6 +77,7 @@ return (
                 </div>
             </div>
         </div>
+
 
     </>
 )

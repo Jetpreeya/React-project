@@ -8,9 +8,7 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const { email, password } = e.target.elements;
-
         try {
-
             firebaseConfig.auth().createUserWithEmailAndPassword(email.value, password.value);
             setCurrentUser(true);
 
