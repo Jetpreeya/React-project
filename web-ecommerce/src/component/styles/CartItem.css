@@ -1,28 +1,136 @@
-.cart{
-    padding: 10px;
-    position:relative;
+/*
+=============== 
+Variables
+===============
+*/
+article {
+    width: 60%;
+    margin: auto;
 }
-.cart-item{
+
+:root {
+    --clr-primary: #2680c0;
+    --clr-primary-dark: hsl(205, 100%, 21%);
+    --clr-primary-light: hsl(205, 84%, 74%);
+    --clr-grey-1: #102a42;
+    --clr-grey-5: #617d98;
+    --clr-grey-10: #f1f5f8;
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --transition: all 0.3s linear;
+    --spacing: 0.25rem;
+    --radius: 0.25rem;
+    --large-screen-width: 1170px;
+    --small-screen-width: 90vw;
+    --fixed-width: 50rem;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  
+
+  @media screen and (min-width: 800px) {
+    h1 {
+      font-size: 4rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+    body {
+      font-size: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1;
+    }
+  }
+  /* more global css */
+  
+
+  .btn:hover {
+    color: var(--clr-primary);
+    background: var(--clr-primary-light);
+  }
+  
+  /*
+  =============== 
+  Cart Item
+  ===============
+  */
+
+  .cart-item {
     display: flex;
-    padding: 15px;
-    margin: 15px;
-    position: relative;
-}
-
-.amount-btn{
-    size: 2px;
-    border-radius: 50%;
-    width: 30px;
-}
-
-
-.row {
-    padding: 15px;
-    margin-top: 10px;
-    position:relative;
-}
-.center{
-    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-left: 20px;
+    border-bottom: 2px solid skyblue;
+    padding-bottom: 5px;
+  }
+  .cart-item img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+  }
+  .cart-item h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  .item-price {
+    background-color: lightgreen;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .remove-btn {
+    padding: 5px 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: skyblue;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  .remove-btn:hover {
+    color: var(--clr-primary-light);
+  }
+  .amount-btn {
+    width: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .amount-btn svg {
+    fill: var(--clr-primary);
+  }
+  .amount-btn:hover svg {
+    fill: var(--clr-primary-light);
+  }
+  .amount {
     text-align: center;
-}
-
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+  hr {
+    background: var(--clr-grey-5);
+    border-color: transparent;
+    border-width: 0.25px;
+  }
+  

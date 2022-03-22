@@ -37,11 +37,11 @@ header{
   padding-bottom: 5px;
 }
 
-.cart_box div:nth-child(2) button {
+/* .cart_box div:nth-child(2) button {
   padding: 5px 10px;
   font-weight: bold;
   margin-right: 5px;
-}
+} */
 
 .cart_box div:nth-child(3) button {
   padding: 5px 10px;
@@ -78,7 +78,7 @@ header{
 
 .total span:nth-child(2) {
   font-size: 2rem;
-  color: green;
+  color: rgb(19, 27, 19);
   font-weight: bold;
 }
 

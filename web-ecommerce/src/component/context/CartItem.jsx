@@ -9,11 +9,6 @@ const CartItem = ({ id, img, title, price, amount }) => {
       <img src={img} alt={title} width={120} height={120}/>
       <div>
         <h4>{title}</h4>
-        <h4 className='item-price'>{price} Kr</h4>
-        {/* remove button */}
-        <button className='remove-btn' onClick={() => remove(id)}>
-          remove
-        </button>
       </div>
       <div>
         {/* increase amount */}
@@ -30,6 +25,15 @@ const CartItem = ({ id, img, title, price, amount }) => {
             <path d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z' />
           </svg>
         </button>
+         {/* remove button */}
+         <div>
+         <h4 className='item-price'>{price} Kr</h4>
+         </div>
+         <div>
+         <button className='remove-btn' onClick={() => remove(id)}>
+          remove
+        </button>
+        </div>
       </div>
     </article>
   )
