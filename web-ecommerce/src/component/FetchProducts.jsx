@@ -11,7 +11,7 @@ const FetchProducts = ({ handleClick }) => {
     useEffect(() => {
         const getProducts = async () => {
             setLoading(true);
-            const response = await fetch("https://fakestoreapi.com/products");
+            const response = await fetch("https://course-api.com/react-useReducer-cart-project");
             if (componentMounted) {
                 setData(await response.clone().json());
                 setFilter(await response.json());
@@ -50,7 +50,7 @@ const FetchProducts = ({ handleClick }) => {
                         <>
                             <div className="col-md-3 mb-4" key={id}>
                                 <div className="card h-100 text-center p-4" key={id}>
-                                    <img src={item.image} className="card-img-top" alt={item.title} height="180px" />
+                                    <img src={item.img} className="card-img-top" alt={item.title} height="180px" />
                                     <div className="card-body">
                                         <h5 className="card-title mb-0">{item.title.substring(0, 12)}</h5>
                                         <p className="card-text">{item.price} Kr</p>
