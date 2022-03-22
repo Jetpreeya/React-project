@@ -9,13 +9,12 @@ const DashBoard = () => {
     if (!currentUser) {
         return <Navigate to ="/" />;
     }
-
     return (
         <div>
-            <div className="container mt-5">
+            <div className="container mt-5" >
             <div className = "text-center">
                 <h1>Welcome to Jet E-commerce</h1>
-                <p> If you can see this you're logged in.</p>
+                <p> If you can see this you're registed and logged in.</p>
                 <button onClick={() => firebaseConfig.auth().signOut()} className="btn btn-dark">Sign Out</button>
             </div>
             </div>
