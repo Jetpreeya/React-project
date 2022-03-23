@@ -3,6 +3,9 @@ import { Navigate } from 'react-router-dom'
 import firebaseConfig from '../../config'
 
 const Register = () => {
+    const sayHello=() => {
+        alert('Welcome You are register !');
+      }
     const [currentUser, setCurrentUser] = useState(null);
 
     const handleSubmit = (e) => {
@@ -52,7 +55,7 @@ const Register = () => {
                                         <input type="password" name="password" className="form-control" id="NewInputPassword1" />
                                     </div>
 
-                                    <button type="submit" className="btn btn-success w-30 ms-3 ">Register</button>
+                                    <button type="submit" className="btn btn-success w-30 ms-3 " onClick={sayHello}> Register</button>
                                     <button type="submit" className="btn btn-danger w-30 ms-3">Cancle</button>
 
                                     <div className="modal-body">
