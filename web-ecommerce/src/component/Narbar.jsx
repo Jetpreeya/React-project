@@ -10,7 +10,9 @@ const Navbar = ({ setShow, size }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
       <div className="container-fluid">
-      <Link to="/"><i className="btn btn-outline fa fa-home me-2 fa-2x">Home</i></Link>
+      <Link to="/"><img src ={"https://cdn-icons.flaticon.com/png/512/2981/premium/2981313.png?token=exp=1648216059~hmac=b49f1530b0561c7bc4c006139546876e"} alt="Logo" height="70px"/>
+      <i className='btn btn-outline fa  me-2 fa-x'>
+      </i></Link>
         {/* <a className="navbar-brand" href="/"> Home</a> */}
         <button className="navbar-toggler" type="button">
         </button>
