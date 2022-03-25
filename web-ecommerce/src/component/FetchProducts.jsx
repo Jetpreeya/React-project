@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
-
+// 1.Use effect , 2.Conditional rendering , and 3. Data fetching
 const FetchProducts = ({ handleClick }) => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
@@ -41,7 +41,6 @@ const FetchProducts = ({ handleClick }) => {
             </div>
         );
     }
-
     const ShowProducts = () => {
         return (
             <>
@@ -55,7 +54,7 @@ const FetchProducts = ({ handleClick }) => {
                                         <h5 className="card-title mb-0">{item.title.substring(0, 12)}</h5>
                                         <p className="card-text">{item.price} Kr</p>
                                         <div className="btn btn-success">
-                                        <button Click={() => handleClick(item)}>Add to Cart</button>
+                                        <button Click={() => handleClick(item.id)}>Add to Cart</button>
                                     </div>
                                     </div>
                                 </div>
