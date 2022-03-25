@@ -9,12 +9,13 @@ import { Routes, Route, Link } from "react-router-dom";
 import Cart from './component/cart';
 import Checkout from './component/checkout';
 import FetchProducts from './component/FetchProducts'
-import CartContainer from './component/context/CartContainer';
+// import CartContainer from './component/context/CartContainer';
 import data from "./Data.json"
 import "./component/styles/SearchForm.css"
 import { AuthProvider } from './component/buttons/Auth'
 import Dashboard from './dashboard'
 import Diliver from './component/Diliver'
+
 
 /*Routing with React */
 /*useState to show the products in the cart that click from buy button*/
@@ -27,7 +28,6 @@ function App() {
       setLoading(false)
     }, 1000)
   }, [])
-
 
   const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
@@ -67,7 +67,7 @@ function App() {
               <Route path="/Fetch" element={<FetchProducts />} />
               <Route path="/Cart" component={<Cart />} />
               <Route path="/Checkout" element={<Checkout cart={cart}/>} />
-              <Route path="/CartContainer" element={<CartContainer cart={cart}/>} />
+              {/* <Route path="/CartContainer" element={<CartContainer cart={cart}/>} /> */}
               <Route path="/dashboard" element={<Dashboard/>} />
               <Route path="/deliver" element={<Diliver/>} />
             </Routes>
@@ -79,8 +79,6 @@ function App() {
             )
             }
             <FetchProducts />
-            {/* Search function Here 
-            and I don't know yet I will out search bar on the top or below */}
             {/* Search function Here*/}
             <div className="templateContainer">
               <a className="nav-link active " aria-current="page" href="/"><i className="btn-close float-end" aria-label="close"></i>
