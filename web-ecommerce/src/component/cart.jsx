@@ -39,6 +39,7 @@ const Cart = ({ cart, setCart, handleChange,setShow }) => {
     <div className = "text-center">
     <h2>Your cart <i className='fa fa-shopping-basket me-1 fa-2x'></i></h2>
     </div>
+    {/* Rendering of a list key and  Props*/}
       {cart.map((item) => (
         <div className="cart_box" key={item.id}>
           <div className="cart_img">
