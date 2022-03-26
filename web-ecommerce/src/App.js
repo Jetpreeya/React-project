@@ -5,22 +5,22 @@ import Home from './component/Home';
 import Product from './component/Products';
 import ProductsDetail from './component/ProductsDetail';
 import Footer from './component/Footer';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Cart from './component/cart';
 import Checkout from './component/checkout';
 import FetchProducts from './component/FetchProducts'
 // import CartContainer from './component/context/CartContainer';
-import data from "./Data.json"
+
 import "./component/styles/SearchForm.css"
 import { AuthProvider } from './component/buttons/Auth'
 import Dashboard from './dashboard'
 import Diliver from './component/Diliver'
 
 
-/*Routing with React */
+/*Routing with React Router */
 /*useState to show the products in the cart that click from buy button*/
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
+  
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true)
@@ -61,7 +61,7 @@ function App() {
             <Navbar setShow={setShow} size={cart.length} />
             <AuthProvider>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home setShow={setShow}/>} />
               <Route path="/Products" component={<Product />} />
               <Route path="/Products/:id" element={<ProductsDetail />} />
               <Route path="/Fetch" element={<FetchProducts />} />
@@ -79,45 +79,6 @@ function App() {
             )
             }
             <FetchProducts />
-            {/* Search function Here*/}
-            <div className="templateContainer">
-              <a className="nav-link active " aria-current="page" href="/"><i className="btn-close float-end" aria-label="close"></i>
-              </a>
-              <div className="text-center">
-                <div className="cart nav-link" onClick={() => (setShow(false))}>
-                  <button className="btn btn-primary"> Search</button>
-                  <input id="searchInput" type="text" placeholder="Search here..." onChange={(event) => {
-                    setSearchTerm(event.target.value);
-                  }} />
-                  <Link to="/Cart"><i className="fa fa-shopping-cart me-2 fa-2x"></i></Link>
-                  <span>{cart.length}</span>
-                </div>
-
-              </div>
-
-              <div className="template_Container">
-                {
-                  // eslint-disable-next-line array-callback-return
-                  data.filter((val) => {
-                      if (searchTerm === "") {
-                        return val;
-                      } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-                        return val;
-                      }
-                    })
-                    .map((val) => {
-                      return (
-                        <div className="template" key={val.id}>
-                          <img src={val.img} alt="" height="100px" />
-                          <h3>{val.title}</h3>
-                          <p className="price">{val.price} Kr</p>
-                          <button onClick={() => handleClick(val)}>Add to Cart</button>
-                        </div>
-                      )
-                    })
-                }
-              </div>
-            </div>
             <Footer/>
           </React.Fragment>
       }
