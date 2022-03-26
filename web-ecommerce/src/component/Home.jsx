@@ -1,10 +1,45 @@
-import React from 'react'
+import React, { useState } from "react";
+import data from "../Data.json"
 
 function Home() {
-  
+  const [searchTerm, setSearchTerm] = useState("");
+  const [setShow] = useState(true);
     return (  
       <div>
-        <div className = "text-center">
+         {/* Search function Here*/}
+         <div className="templateContainer">
+              <div className="text-center">
+                <div className="cart nav-link" onClick={() => (setShow(false))}>
+                  <button className="btn btn-primary"> Search</button>
+                  <input id="searchInput" type="text" placeholder="Search here..." onChange={(event) => {
+                    setSearchTerm(event.target.value);
+                  }} />
+                </div>
+              </div>
+
+              <div className="template_Container">
+                {
+                  // eslint-disable-next-line array-callback-return
+                  data.filter((item) => {
+                      if (searchTerm === "") {
+                        return item;
+                      } else if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return item;
+                      }
+                    })
+                    .map((item) => {
+                      return (
+                        <div className="template" key={item.id}>
+                          <img src={item.img} alt="" height="100px" />
+                          <h3>{item.title}</h3>
+                          <p className="price">{item.price} Kr</p>
+                        </div>
+                      )
+                    })
+                }
+              </div>
+            </div>
+            <div className = "text-center">
         <h2 style={{color: "SteelBlue"}}>Welcome to Jet E-commerce Website</h2>
         </div>
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
