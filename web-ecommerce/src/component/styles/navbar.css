@@ -20,7 +20,7 @@ nav {
 .my_shop {
   font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(10, 2, 2);
+  color: rgb(160, 100, 100);
   font-family: cursive;
 }
 .cart {
@@ -39,5 +39,4 @@ nav {
   position: absolute;
   top: auto;
 }
-
 

@@ -5,11 +5,13 @@ import "./styles/product.css";
 
 const Product = ({ handleClick }) => {
     return (
+      <>
       <section>
         {DATA.map((item) => (
           <Cards key={item.id} item={item} handleClick={handleClick} />
         ))}
       </section>
+      </>
     );
   };
   

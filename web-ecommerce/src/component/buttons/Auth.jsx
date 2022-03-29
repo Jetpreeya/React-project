@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import firebaseConfig from '../../config'
-  
+
+// Context by AuthContext
 export const AuthContext = React.createContext ();
 export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
