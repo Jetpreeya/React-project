@@ -18,7 +18,7 @@ const Register = () => {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
-                                <form onSubmit>
+                                <form>
                                     <div className="mb-3">
                                         <label htmlFor="NewInputName" className="form-label">First Name</label>
                                         <input type="text" className="form-control" id="NewInputName" />

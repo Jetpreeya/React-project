@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const Login = () => {
     const sayLogin=() => {
         alert('You are logged in !');
@@ -11,6 +10,7 @@ const Login = () => {
     const facebook = () => {
         window.open("https://www.facebook.com/", "_self");
     };
+
 return (
     <>
         <button type="button" className="btn btn-outline-success ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">

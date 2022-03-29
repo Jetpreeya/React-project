@@ -10,6 +10,7 @@ import Cart from './component/cart';
 import Checkout from './component/checkout';
 import FetchProducts from './component/FetchProducts'
 // import CartContainer from './component/context/CartContainer';
+import "./component/styles/SearchForm.css"
 import { AuthProvider } from './component/buttons/Auth'
 import Dashboard from './dashboard'
 import Diliver from './component/Diliver'
