@@ -1,28 +1,9 @@
-import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom'
-import firebaseConfig from '../../config'
+import React from 'react'
 
 const Register = () => {
-    const sayHello=() => {
+    const sayRegister=() => {
         alert('Welcome You are register !');
       }
-    const [currentUser, setCurrentUser] = useState(null);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const { email, password } = e.target.elements;
-        try {
-            firebaseConfig.auth().createUserWithEmailAndPassword(email.value, password.value);
-            setCurrentUser(true);
-
-        } catch (error) {
-            alert(error);
-        }
-    }
-// Should I use Navigate or Link ?
-    if (currentUser) {
-        return <Navigate to = "/dashboard" />
-    }
         return (
             <>
                 <button type="button" className="btn btn-outline-info ms-2" data-bs-toggle="modal" data-bs-target="#NewModal">
@@ -37,7 +18,7 @@ const Register = () => {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
-                                <form onSubmit={handleSubmit}>
+                                <form onSubmit>
                                     <div className="mb-3">
                                         <label htmlFor="NewInputName" className="form-label">First Name</label>
                                         <input type="text" className="form-control" id="NewInputName" />
@@ -55,7 +36,7 @@ const Register = () => {
                                         <input type="password" name="password" className="form-control" id="NewInputPassword1" />
                                     </div>
 
-                                    <button type="submit" className="btn btn-success w-30 ms-3 " onClick={sayHello}> Register</button>
+                                    <button type="submit" className="btn btn-success w-30 ms-3 " onClick={sayRegister}> Register</button>
                                     <button type="submit" className="btn btn-danger w-30 ms-3">Cancle</button>
 
                                     <div className="modal-body">

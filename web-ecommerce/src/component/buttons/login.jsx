@@ -1,8 +1,8 @@
 import React from 'react'
-import firebaseConfig from '../../config'
+
 
 const Login = () => {
-    const sayHello=() => {
+    const sayLogin=() => {
         alert('You are logged in !');
       }
     const google = () => {
@@ -11,16 +11,6 @@ const Login = () => {
     const facebook = () => {
         window.open("https://www.facebook.com/", "_self");
     };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const { email, password } = e.target.elements;
-        try {
-            firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value);
-        } catch(error) {
-            alert(error);
-        }
-    }
 return (
     <>
         <button type="button" className="btn btn-outline-success ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -35,11 +25,7 @@ return (
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        <form
-                            onSubmit={(event) => {
-                                const [email, pass] = event.target.children;
-                                handleSubmit(email, pass);
-                            }}>
+                        <form>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                                 <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
@@ -52,7 +38,7 @@ return (
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                 <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
                             </div>
-                            <button type="submit" className="btn btn-primary w-100 " onClick={sayHello}>Login</button>
+                            <button type="submit" className="btn btn-primary w-100 " onClick={sayLogin}>Login</button>
                             
                             <div className="modal-body">
                                 <div className="loginButton google" onClick={google}>
