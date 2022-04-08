@@ -10,15 +10,10 @@ import Cart from './component/Cart';
 import Checkout from './component/Checkout';
 import FetchProducts from './component/FetchProducts'
 import "./component/Styles/SearchForm.css"
-import { AuthProvider } from './component/buttons/Auth'
 import Dashboard from './DashBoard'
 import Deliver from './component/Deliver'
 
-
-/*Routing with React Router */
-/*useState to show the products in the cart that click from buy button*/
 function App() {
-  
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true)
@@ -57,10 +52,9 @@ function App() {
           :
           <React.Fragment>
             <Navbar setShow={setShow} size={cart.length} />
-            <AuthProvider>
             <Routes>
               <Route path="/" element={<Home setShow={setShow}/>} />
-              <Route path="/Products" component={<Product />} />
+              <Route path="/Products" element={<Product />} />
               <Route path="/Products/:id" element={<ProductsDetail />} />
               <Route path="/Fetch" element={<FetchProducts />} />
               <Route path="/Cart" component={<Cart />} />
@@ -69,7 +63,6 @@ function App() {
               <Route path="/dashboard" element={<Dashboard/>} />
               <Route path="/deliver" element={<Deliver/>} />
             </Routes>
-            </AuthProvider>
             {show ? (
               <Product handleClick={handleClick} />
             ) : (
