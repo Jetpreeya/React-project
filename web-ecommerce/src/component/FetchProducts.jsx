@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 
-// 1.Use effect , 2.Conditional rendering , 
-// 3. Data fetching, and 4. Prop validation
-
 const FetchProducts = ({ handleClick }) => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
@@ -94,7 +91,6 @@ FetchProducts.propTypes = {
     id : PropTypes.number,
     price : PropTypes.number,
     title : PropTypes.string,
-    item : PropTypes.object,
 }
 
 export default FetchProducts

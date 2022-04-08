@@ -1,7 +1,7 @@
 import React from 'react'
 import DATA from '../Data'
-import Cards from "./card"; 
-import "./styles/product.css";
+import Cards from "./Card"; 
+import "./Styles/product.css";
 
 const Product = ({ handleClick }) => {
     return (

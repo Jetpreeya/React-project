@@ -1,11 +1,9 @@
 import React  from "react";
-import Login from "./buttons/login";
-import Register from "./buttons/register";
-import "./styles/navbar.css";
+import Login from "./buttons/Login";
+import Register from "./buttons/Register";
+import "./Styles/navbar.css";
 import { Link } from "react-router-dom";
-// import CartBtn from "./buttons/cartIcon";
 
-/*I use Link to connect cart with route cart */
 const Navbar = ({ setShow, size }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
@@ -13,7 +11,6 @@ const Navbar = ({ setShow, size }) => {
       <Link to="/"><img src ={"/asset/shop.png"} alt="Logo" height="70px"/>
       <i className='btn btn-outline fa  me-2 fa-x'>
       </i></Link>
-        {/* <a className="navbar-brand" href="/"> Home</a> */}
         <button className="navbar-toggler" type="button">
         </button>
         <div className="collapse navbar-collapse ms-1 " >
@@ -26,7 +23,6 @@ const Navbar = ({ setShow, size }) => {
           </div>
         <Register />
         <Login />
-        {/* <CartBtn /> */}
         <div className="cart nav-link" onClick={() => (setShow(false))}>
           <Link to="/Cart"><i className="fa fa-shopping-cart me-2 fa-2x"></i></Link>
           <span>{size}</span>

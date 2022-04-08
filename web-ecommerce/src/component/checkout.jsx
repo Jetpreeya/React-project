@@ -1,10 +1,8 @@
 import React, { useState,useEffect} from "react";
-import "./styles/cart.css";
+import "./Styles/Cart.css";
 import { Link } from "react-router-dom";
 
 const Checkout = ({cart}) => {
-    // const [cart] = useState(DATA);
-    // console.log('cart from chkout',cart);
     const [price, setPrice] = useState(0);
     const handlePrice = () => {
         let ans = 0;

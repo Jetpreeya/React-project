@@ -6,13 +6,12 @@ import Product from './component/Products';
 import ProductsDetail from './component/ProductsDetail';
 import Footer from './component/Footer';
 import { Routes, Route } from "react-router-dom";
-import Cart from './component/cart';
-import Checkout from './component/checkout';
+import Cart from './component/Cart';
+import Checkout from './component/Checkout';
 import FetchProducts from './component/FetchProducts'
-// import CartContainer from './component/context/CartContainer';
-import "./component/styles/SearchForm.css"
+import "./component/Styles/SearchForm.css"
 import { AuthProvider } from './component/buttons/Auth'
-import Dashboard from './dashboard'
+import Dashboard from './DashBoard'
 import Diliver from './component/Diliver'
 
 
