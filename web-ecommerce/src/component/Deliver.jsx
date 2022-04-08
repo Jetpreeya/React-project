@@ -1,6 +1,6 @@
 import React from "react";
 
-const Diliver = () =>{
+const Deliver = () =>{
     
     return(
     <>
@@ -18,4 +18,4 @@ const Diliver = () =>{
 )
 }
 
-export default Diliver
+export default Deliver 

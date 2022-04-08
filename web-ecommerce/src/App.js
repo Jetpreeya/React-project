@@ -12,7 +12,7 @@ import FetchProducts from './component/FetchProducts'
 import "./component/Styles/SearchForm.css"
 import { AuthProvider } from './component/buttons/Auth'
 import Dashboard from './DashBoard'
-import Diliver from './component/Diliver'
+import Deliver from './component/Deliver'
 
 
 /*Routing with React Router */
@@ -67,7 +67,7 @@ function App() {
               <Route path="/Checkout" element={<Checkout cart={cart}/>} />
               {/* <Route path="/CartContainer" element={<CartContainer cart={cart}/>} /> */}
               <Route path="/dashboard" element={<Dashboard/>} />
-              <Route path="/deliver" element={<Diliver/>} />
+              <Route path="/deliver" element={<Deliver/>} />
             </Routes>
             </AuthProvider>
             {show ? (
